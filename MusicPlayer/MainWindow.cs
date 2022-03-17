@@ -37,7 +37,7 @@ namespace MusicPlayer
                 str += a.Name + "\n";
                 foreach(var s in a.Songs)
                 {
-                    str += s.Name + "\n";
+                    str += "\t" + s.Name + "\n";
                 }
             }
 
@@ -48,15 +48,7 @@ namespace MusicPlayer
 
         private void returnTrueIfDone()
         {
-            Thread.Sleep(30000);
-            label1.Invoke((MethodInvoker)
-                (
-                    () =>
-                    {
-                        label1.Text = "True";
-                    }
-                )
-            );
+            label1.Invoke((MethodInvoker) (() =>{label1.Text = "Import";}));
         }
         private void ImportMenuItem_Click(object sender, EventArgs e)
         {
